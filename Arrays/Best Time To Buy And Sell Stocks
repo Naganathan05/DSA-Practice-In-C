@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,k,n,temp,M,B,S;
+    printf("Enter The Number Of Elements Present In The Array:");
+    scanf("%d", &n);
+    int arr[n];
+    for (i = 0; i <= n - 1; i++){
+        printf("Enter The Value Of The Element %d:", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    M = 0;
+    for (i = 0; i <= n - 1; i++){
+        for (j = i + 1; j <= n - 1; j++){
+            if (arr[j] - arr[i] >= M){
+                M = arr[j] - arr[i];
+                B = i;
+                S = j;
+            }
+        }
+    }
+    printf("The Stocks Can Be Bought On Day %d With Price %d and they Can Be Sold On Day %d With Price %d", B, arr[B], S, arr[S]);
+}
