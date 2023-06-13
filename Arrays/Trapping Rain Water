@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,n,k,temp,M,sum;
+    printf("Enter The Number Of Elements Of The Array:");
+    scanf("%d", &n);
+    int arr[n];
+    for (i = 0; i <= n - 1; i++){
+        printf("Enter The Value Of The Element %d:", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    M = arr[0];
+    sum = 0;
+    for (i = 0; i <= n - 1; i++){
+        if (arr[i] > M){
+            M = arr[i];
+        }
+        else {
+            sum = sum + (M - arr[i]);
+        }
+    }
+    printf(" The Maximum Amount Of Water That Can Be Stored Is %d", sum);
+}
