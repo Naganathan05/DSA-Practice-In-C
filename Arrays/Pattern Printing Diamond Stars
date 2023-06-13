@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,k,n,cnt;
+    printf("Enter The Number Of Terms:");
+    scanf("%d", &n);
+    n--;
+    cnt = 0;
+    for(i = n; i >= 1; i--){
+        for(j = i - 1; j >= 1; j--){
+            printf(" ");
+        }
+        printf("*");
+        for(j = cnt; j >= 1; j--){
+            printf(" ");
+        }
+        if(cnt == 0){
+            cnt++;
+        }
+        else{
+            printf("*");
+            cnt = cnt + 2;
+        }
+        printf("\n");
+    }
+    cnt = 2*n - 3;
+    for(i = 1; i <= n; i++){
+        for(j = i - 1; j >= 1; j--){
+            printf(" ");
+        }
+        printf("*");
+        for(j = cnt; j >= 1; j--){
+            printf(" ");
+        }
+        if(cnt != 0){
+            printf("*");
+        }
+        if(cnt == 1){
+            cnt--;
+        }
+        else{
+            cnt = cnt - 2;
+        }
+        printf("\n");
+    }
+}
